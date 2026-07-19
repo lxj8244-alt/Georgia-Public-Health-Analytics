@@ -123,6 +123,7 @@ flowchart TD
 ```
 
 ## 8. SQL Matching Workflow
+```mermaid
 flowchart TD
     %% 1단계: Starting Dataset
     Start["<b>DeathRecord</b><br>(Starting Dataset)"]
@@ -158,3 +159,4 @@ flowchart TD
     
     style Matches fill:#fff7ed,stroke:#ffedd5,stroke-width:1px
     style Final fill:#1e293b,stroke:#0f172a,stroke-width:1px,color:#fff,font-weight:bold
+```
