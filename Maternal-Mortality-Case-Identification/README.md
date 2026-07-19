@@ -101,15 +101,22 @@ flowchart TD
         F_Fields["PK FetalDeathSFN<br>MotherSSN<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>FetalDOB<br>County"]
     end
 
-    %% 하단 설명문 추가
+    %% 하단 설명문 (테두리와 배경 없는 투명 텍스트로 처리)
+    Note["Logical Relationship (No Physical Foreign Keys)"]
+    
+    %% 가상의 선을 연결하되 선은 안 보이게 처리하여 하단 중앙에 배치
+    BirthRecord ~~~ Note
+
+    %% 상단 DB 타이틀 및 하단 설명문 스타일링
     style DB fill:#1e293b,stroke:#0f172a,stroke-width:2px,color:#fff,font-weight:bold
+    style Note fill:none,stroke:none,color:#475569,font-weight:bold,font-size:14px
     
     %% 각 박스 스타일링 (배경색 및 테두리 색상 지정)
     style D_Fields fill:#eff6ff,stroke:#bfdbfe,stroke-width:1px,text-align:left
     style B_Fields fill:#f0fdf4,stroke:#bbf7d0,stroke-width:1px,text-align:left
     style F_Fields fill:#faf5ff,stroke:#e9d5ff,stroke-width:1px,text-align:left
 
-    %% 서브그래프 테두리 숨기기 또는 연하게 처리
+    %% 서브그래프 테두리 연하게 처리
     style DeathRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
     style BirthRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
     style FetalDeathRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
