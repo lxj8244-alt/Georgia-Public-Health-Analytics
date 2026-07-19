@@ -164,3 +164,23 @@ flowchart TD
     style Matches fill:#fff7ed,stroke:#ffedd5,stroke-width:1.5px
     style Final fill:#1e293b,stroke:#0f172a,stroke-width:1.5px,color:#fff
 ```
+
+## 9. SQL Script
+
+This project includes a complete SQL Server implementation for maternal mortality case identification.
+
+The SQL script demonstrates:
+
+- Defining the reporting period
+- Creating temporary matching tables
+- Matching Birth Records by SSN
+- Matching Fetal Death Records by SSN
+- Matching by Mother's Name and Date of Birth
+- Matching by Maiden Name and Date of Birth
+- Identifying pregnancy-related ICD-10 O-codes
+- Searching pregnancy-related cause-of-death keywords
+- Returning consolidated potential maternal mortality cases
+
+### SQL File
+
+📄 **MaternalMortalityCaseIdentification.sql**
