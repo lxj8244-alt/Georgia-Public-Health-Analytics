@@ -80,22 +80,22 @@ The project is intended solely to demonstrate SQL development, record linkage te
 graph TD
     %% BirthRecord
     subgraph BirthRecord ["BirthRecord"]
-        B_Fields["| BirthStateFileNumber (PK) |\n| MotherFirstName |\n| MotherLastName |\n| MaidenName |\n| MotherDOB |\n| MotherSSN |\n| ChildDOB |\n| Race |"]
+        B_Fields["| BirthStateFileNumber (PK) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |\n| MotherFirstName |\n| MotherLastName |\n| MaidenName |\n| MotherDOB |\n| MotherSSN |\n| ChildDOB |\n| Race |"]
     end
 
     %% DeathRecord
     subgraph DeathRecord ["DeathRecord"]
-        D_Fields["| DeathStateFileNumber (PK) |\n| DecedentFirstName |\n| DecedentLastName |\n| DecedentDOB |\n| DeathDate |\n| SSN |\n| PregnancyStatus |\n| ICD10 |\n| CauseOfDeath |\n| County |"]
+        D_Fields["| DeathStateFileNumber (PK) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |\n| DecedentFirstName |\n| DecedentLastName |\n| DecedentDOB |\n| DeathDate |\n| SSN |\n| PregnancyStatus |\n| ICD10 |\n| CauseOfDeath |\n| County |"]
     end
 
     %% FetalDeath
     subgraph FetalDeathRecord ["FetalDeathRecord"]
-        F_Fields["| FetalStateFileNumber (PK) |\n| MotherFirstName |\n| MotherLastName |\n| MaidenName |\n| MotherDOB |\n| MotherSSN |"]
+        F_Fields["| FetalStateFileNumber (PK) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |\n| MotherFirstName |\n| MotherLastName |\n| MaidenName |\n| MotherDOB |\n| MotherSSN |"]
     end
 
     %% Relationships
-    BirthRecord --> |"Match by SSN / Name / DOB"| DeathRecord
-    DeathRecord --> |"Match by SSN / Name / DOB"| FetalDeathRecord
+    BirthRecord --> |"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Match by SSN / Name / DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"| DeathRecord
+    DeathRecord --> |"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Match by SSN / Name / DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"| FetalDeathRecord
 
     %% Styling
     style B_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
