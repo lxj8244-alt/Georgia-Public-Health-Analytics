@@ -10,22 +10,22 @@ The objective is to demonstrate how SQL can support public health surveillance, 
 
 ---
 
- ## Matching Criteria
+#### Matching Criteria
 
 Potential maternal mortality cases are identified using multiple complementary matching strategies.
 
- ### Pregnancy Indicators
+#### Pregnancy Indicators
 
 * Pregnancy status recorded on the death certificate
 
- ### Record Linkage
+ #### Record Linkage
 
 * Match to Birth Records using Social Security Number (SSN)
 * Match to Fetal Death Records using Social Security Number (SSN)
 * Match using Mother's Name and Date of Birth
 * Match using Mother's Maiden Name and Date of Birth
 
- ### Clinical Indicators
+ #### Clinical Indicators
 
 * Pregnancy-related ICD-10 O-codes
 * Pregnancy-related cause-of-death keywords
@@ -34,7 +34,7 @@ Matched records from each strategy are consolidated into a temporary table and r
 
 ---
 
-## Objectives
+#### Objectives
 
 * Design a relational SQL Server database for maternal mortality analysis.
 * Demonstrate advanced SQL querying and multi-step record matching.
