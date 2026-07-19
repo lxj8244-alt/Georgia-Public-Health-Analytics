@@ -126,21 +126,21 @@ flowchart TD
 ```mermaid
 flowchart TD
     %% 1단계: Starting Dataset
-    Start["<b>DeathRecord</b><br>(Starting Dataset)"]
+    Start["<div style='padding: 5px 10px;'><b>DeathRecord</b><br><span style='font-size: 12px; color: #64748b;'>(Starting Dataset)</span></div>"]
 
     %% 2단계: Filter
-    Filter["Filter Potential Cases<br>─────────────────────────────<br>Pregnancy Status<br>ICD-10 O Codes<br>Cause of Death Keywords<br>─────────────────────────────"]
+    Filter["<div style='padding: 10px; line-height: 1.6;'><b>Filter Potential Cases</b><div style='border-top: 1px solid #cbd5e1; margin: 6px 0;'></div><span style='font-size: 13px; color: #334155;'>• Pregnancy Status<br>• ICD-10 O Codes<br>• Cause of Death Keywords</span></div>"]
 
     %% 3단계: 두 갈래 분기 (Match Records)
-    MatchBirth["Match Birth Records<br>─────────────────────────────<br>1. SSN<br>2. First + Last + DOB<br>3. First + Maiden + DOB"]
+    MatchBirth["<div style='padding: 10px; line-height: 1.6;'><b>Match Birth Records</b><div style='border-top: 1px solid #bbf7d0; margin: 6px 0;'></div><span style='font-size: 13px; color: #334155;'>1. SSN<br>2. First + Last + DOB<br>3. First + Maiden + DOB</span></div>"]
     
-    MatchFetal["Match Fetal Death Records<br>─────────────────────────────<br>1. SSN<br>2. First + Last + DOB<br>3. First + Maiden + DOB"]
+    MatchFetal["<div style='padding: 10px; line-height: 1.6;'><b>Match Fetal Death Records</b><div style='border-top: 1px solid #e9d5ff; margin: 6px 0;'></div><span style='font-size: 13px; color: #334155;'>1. SSN<br>2. First + Last + DOB<br>3. First + Maiden + DOB</span></div>"]
 
     %% 4단계: 매칭 결과 합쳐짐
-    Matches["<b>#MM_Matches</b><br>(Matched Candidate Cases)"]
+    Matches["<div style='padding: 8px 15px;'><b>#MM_Matches</b><br><span style='font-size: 12px; color: #c2410c;'>(Matched Candidate Cases)</span></div>"]
 
     %% 5단계: 최종 결과
-    Final["Potential Maternal Mortality Cases"]
+    Final["<div style='padding: 10px 20px; font-weight: bold; letter-spacing: 0.5px;'>Potential Maternal<br>Mortality Cases</div>"]
 
     %% 흐름 연결 (Relationships)
     Start --> Filter
@@ -150,13 +150,13 @@ flowchart TD
     MatchFetal --> Matches
     Matches --> Final
 
-    %% 스타일링 (GitHub 마크다운 맞춤 예쁜 색상 적용)
-    style Start fill:#eff6ff,stroke:#bfdbfe,stroke-width:1px
-    style Filter fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,text-align:left
+    %% 스타일링 (선의 부드러운 곡선 및 내부 정렬 설정)
+    style Start fill:#eff6ff,stroke:#bfdbfe,stroke-width:1.5px
+    style Filter fill:#f8fafc,stroke:#cbd5e1,stroke-width:1.5px,text-align:left
     
-    style MatchBirth fill:#f0fdf4,stroke:#bbf7d0,stroke-width:1px,text-align:left
-    style MatchFetal fill:#faf5ff,stroke:#e9d5ff,stroke-width:1px,text-align:left
+    style MatchBirth fill:#f0fdf4,stroke:#bbf7d0,stroke-width:1.5px,text-align:left
+    style MatchFetal fill:#faf5ff,stroke:#e9d5ff,stroke-width:1.5px,text-align:left
     
-    style Matches fill:#fff7ed,stroke:#ffedd5,stroke-width:1px
-    style Final fill:#1e293b,stroke:#0f172a,stroke-width:1px,color:#fff,font-weight:bold
+    style Matches fill:#fff7ed,stroke:#ffedd5,stroke-width:1.5px
+    style Final fill:#1e293b,stroke:#0f172a,stroke-width:1.5px,color:#fff
 ```
