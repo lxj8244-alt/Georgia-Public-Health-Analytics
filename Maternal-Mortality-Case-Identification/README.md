@@ -75,6 +75,8 @@ Although the workflow is inspired by public health data quality processes used i
 
 The project is intended solely to demonstrate SQL development, record linkage techniques, and data quality methodologies.
 
+---
+
 ## 7. Database ERD
 ```mermaid
 flowchart TD
