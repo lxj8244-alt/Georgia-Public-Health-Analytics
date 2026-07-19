@@ -1,6 +1,6 @@
 # Maternal Mortality Case Identification Using SQL Server
 
-## Project Overview
+## 1. Project Overview
 
 This project demonstrates a SQL Server solution for identifying potential maternal mortality cases by integrating multiple vital records datasets. It was developed using **synthetic data** to simulate real-world public health data quality workflows while protecting confidential information.
 
