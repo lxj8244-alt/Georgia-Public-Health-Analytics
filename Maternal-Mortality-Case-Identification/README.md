@@ -207,6 +207,6 @@ The sample output below illustrates how death records are matched to birth recor
 
 The complete sample dataset is available below.
 
-➡️ **[MaternalMortalityOutput2025.csv](../MaternalMortalityOutput2025.csv)**
+➡️ **[MaternalMortalityOutput2025.csv](MaternalMortalityOutput2025.csv)**
 
 > **Note:** All records shown are synthetic and are intended solely for demonstrating SQL-based record linkage and maternal mortality case identification techniques.
