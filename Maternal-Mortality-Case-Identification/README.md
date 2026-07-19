@@ -78,26 +78,38 @@ The project is intended solely to demonstrate SQL development, record linkage te
 ## 7. Database ERD
 ```mermaid
 flowchart TD
-    %% BirthRecord
-    subgraph BirthRecord ["BirthRecord"]
-        B_Fields["BirthStateFileNumber (PK)<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>MotherSSN<br>ChildDOB<br>Race"]
-    end
+    %% 최상단 루트 노드
+    DB["MaternalMortalityDB"]
 
-    %% DeathRecord
+    %% 세 갈래 분기 처리
+    DB --> DeathRecord
+    DB --> BirthRecord
+    DB --> FetalDeathRecord
+
+    %% DeathRecord 테이블
     subgraph DeathRecord ["DeathRecord"]
-        D_Fields["DeathStateFileNumber (PK)<br>DecedentFirstName<br>DecedentLastName<br>DecedentDOB<br>DeathDate<br>SSN<br>PregnancyStatus<br>ICD10<br>CauseOfDeath<br>County"]
+        D_Fields["PK DeathSFN<br>SSN<br>FirstName<br>LastName<br>DOB<br>DateOfDeath<br>PregnancyStatus<br>ICD10<br>CauseOfDeath<br>County"]
     end
 
-    %% FetalDeath
+    %% BirthRecord 테이블
+    subgraph BirthRecord ["BirthRecord"]
+        B_Fields["PK BirthSFN<br>MotherSSN<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>ChildDOB<br>Race<br>County"]
+    end
+
+    %% FetalDeathRecord 테이블
     subgraph FetalDeathRecord ["FetalDeathRecord"]
-        F_Fields["FetalStateFileNumber (PK)<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>MotherSSN"]
+        F_Fields["PK FetalDeathSFN<br>MotherSSN<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>FetalDOB<br>County"]
     end
 
-    %% Relationships
-    BirthRecord --> |"Match by SSN / Name / DOB"| DeathRecord
-    DeathRecord --> |"Match by SSN / Name / DOB"| FetalDeathRecord
+    %% 하단 설명문 추가
+    style DB fill:#1e293b,stroke:#0f172a,stroke-width:2px,color:#fff,font-weight:bold
+    
+    %% 각 박스 스타일링 (배경색 및 테두리 색상 지정)
+    style D_Fields fill:#eff6ff,stroke:#bfdbfe,stroke-width:1px,text-align:left
+    style B_Fields fill:#f0fdf4,stroke:#bbf7d0,stroke-width:1px,text-align:left
+    style F_Fields fill:#faf5ff,stroke:#e9d5ff,stroke-width:1px,text-align:left
 
-    %% Styling
-    style B_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
-    style D_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
-    style F_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
+    %% 서브그래프 테두리 숨기기 또는 연하게 처리
+    style DeathRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
+    style BirthRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
+    style FetalDeathRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
