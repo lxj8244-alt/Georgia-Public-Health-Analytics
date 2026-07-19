@@ -186,3 +186,27 @@ The SQL script demonstrates:
 ➡️ **[MaternalMortalityCaseIdentification.sql](MaternalMortalityCaseIdentification.sql)**
 
 The SQL script is fully documented with step-by-step comments to demonstrate the complete matching workflow and data quality process.
+
+## 10. Sample SQL Output
+
+The SQL script supports maternal mortality case identification for the **2021–2025** reporting period.
+
+For demonstration purposes, the sample output below shows records generated for the **2025 reporting year**.
+
+| Death SFN | Date of Death | First Name | Last Name | Birth Match | ICD-10 | Race | County |
+|-----------|---------------|------------|-----------|-------------|--------|------|--------|
+| 2025GA000617 | 01/04/2025 | David | Thomas | No Match | C34 | Black | Bartow |
+| 2025GA000692 | 01/04/2025 | Emily | Taylor | Birth (SSN) | — | White | Hall |
+| 2025GA000734 | 01/04/2025 | Patricia | Johnson | Birth (SSN) | — | Asian | Clayton |
+| 2025GA000742 | 01/05/2025 | Mary | Williams | Birth (SSN) | — | Black | Effingham |
+| 2025GA000696 | 01/10/2025 | Amanda | Davis | Birth (SSN) | — | Black | Henry |
+| 2025GA000659 | 01/14/2025 | Elizabeth | Smith | Birth (SSN) | — | Other | Carroll |
+| 2025GA000652 | 01/15/2025 | Linda | Jones | Birth (SSN) | — | Black | Forsyth |
+
+### Complete Sample Dataset
+
+The complete sample dataset for the 2025 reporting year is available below.
+
+➡️ **[MaternalMortalityOutput2025.csv](../MaternalMortalityOutput2025.csv)**
+
+> **Note:** This project uses synthetic data created for portfolio demonstration purposes. The SQL workflow supports analysis for the entire **2021–2025** reporting period, while the sample output shown here is limited to **2025** for readability.
