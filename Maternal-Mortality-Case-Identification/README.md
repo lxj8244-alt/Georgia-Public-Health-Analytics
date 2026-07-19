@@ -88,12 +88,12 @@ flowchart TD
 
     %% DeathRecord 테이블
     subgraph DeathRecord ["DeathRecord"]
-        D_Fields["PK DeathSFN<br>SSN<br>FirstName<br>LastName<br>DOB<br>DateOfDeath<br>PregnancyStatus<br>ICD10<br>CauseOfDeath<br>County"]
+        D_Fields["PK DeathSFN<br>SSN<br>FirstName<br>LastName<br>DOB<br>DateOfDeath<br>PregnancyStatus<br>ICD10<br>CauseOfDeath<br>County<br>Race"]
     end
 
     %% BirthRecord 테이블
     subgraph BirthRecord ["BirthRecord"]
-        B_Fields["PK BirthSFN<br>MotherSSN<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>ChildDOB<br>Race<br>County"]
+        B_Fields["PK BirthSFN<br>MotherSSN<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>ChildDOB<br>County"]
     end
 
     %% FetalDeathRecord 테이블
