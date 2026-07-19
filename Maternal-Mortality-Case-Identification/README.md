@@ -76,4 +76,58 @@ Although the workflow is inspired by public health data quality processes used i
 The project is intended solely to demonstrate SQL development, record linkage techniques, and data quality methodologies.
 
 ## 7. Database ERD
+```mermaid
+erDiagram
+    BirthRecord {
+        varchar StateFileNumber PK
+        varchar MotherSSN
+        varchar MotherFirstName
+        varchar MotherLastName
+        varchar MotherMaidenLastName
+        date MotherDOB
+        date ChildsDateOfBirth
+        int nDoBYear
+        boolean bSearchable
+        boolean bVoid
+    }
 
+    DeathRecord {
+        varchar StateFileNumber PK
+        varchar SSN
+        varchar DecedentFirstName
+        varchar DecedentLastName
+        varchar DecedentMaidenLastName
+        date DOB
+        date dDateOfDeath
+        char cPregnant
+        varchar ICDCode1
+        varchar ICDCode2
+        varchar CauseOfDeathA
+        varchar CauseOfDeathB
+        varchar SignificantConditions
+        varchar County
+    }
+
+    FetalDeathRecord {
+        varchar StateFileNumber PK
+        varchar MotherSSN
+        varchar MotherFirstName
+        varchar MotherLastName
+        varchar MotherMaidenLastName
+        date MotherDOB
+        date dChildsDateOfBirth
+        int nDoBYear
+        boolean bSearchable
+        boolean bVoid
+    }
+
+    MM_Matches {
+        varchar BirthStateFileNumber FK
+        varchar DeathStateFileNumber FK
+        varchar RecordType
+    }
+
+    %% 관계 설정 (Relationships)
+    BirthRecord ||--o| DeathRecord : "MotherSSN = SSN (Maternal Death Match)"
+    BirthRecord ||--o{ MM_Matches : "BirthStateFileNumber"
+    DeathRecord ||--o{ MM_Matches : "DeathStateFileNumber"
