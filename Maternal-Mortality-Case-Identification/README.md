@@ -120,3 +120,41 @@ flowchart TD
     style DeathRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
     style BirthRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
     style FetalDeathRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
+
+## 8. SQL Matching Workflow
+```mermaid
+flowchart TD
+    %% 1단계: Starting Dataset
+    Start["<b>DeathRecord</b><br>(Starting Dataset)"]
+
+    %% 2단계: Filter
+    Filter["Filter Potential Cases<br>─────────────────────────────<br>Pregnancy Status<br>ICD-10 O Codes<br>Cause of Death Keywords<br>─────────────────────────────"]
+
+    %% 3단계: 두 갈래 분기 (Match Records)
+    MatchBirth["Match Birth Records<br>─────────────────────────────<br>1. SSN<br>2. First + Last + DOB<br>3. First + Maiden + DOB"]
+    
+    MatchFetal["Match Fetal Death Records<br>─────────────────────────────<br>1. SSN<br>2. First + Last + DOB<br>3. First + Maiden + DOB"]
+
+    %% 4단계: 매칭 결과 합쳐짐
+    Matches["<b>#MM_Matches</b><br>(Matched Candidate Cases)"]
+
+    %% 5단계: 최종 결과
+    Final["Potential Maternal Mortality Cases"]
+
+    %% 흐름 연결 (Relationships)
+    Start --> Filter
+    Filter --> MatchBirth
+    Filter --> MatchFetal
+    MatchBirth --> Matches
+    MatchFetal --> Matches
+    Matches --> Final
+
+    %% 스타일링 (GitHub 마크다운 맞춤 예쁜 색상 적용)
+    style Start fill:#eff6ff,stroke:#bfdbfe,stroke-width:1px
+    style Filter fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,text-align:left
+    
+    style MatchBirth fill:#f0fdf4,stroke:#bbf7d0,stroke-width:1px,text-align:left
+    style MatchFetal fill:#faf5ff,stroke:#e9d5ff,stroke-width:1px,text-align:left
+    
+    style Matches fill:#fff7ed,stroke:#ffedd5,stroke-width:1px
+    style Final fill:#1e293b,stroke:#0f172a,stroke-width:1px,color:#fff,font-weight:bold
