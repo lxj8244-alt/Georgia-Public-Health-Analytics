@@ -77,27 +77,40 @@ The project is intended solely to demonstrate SQL development, record linkage te
 
 ## 7. Database ERD
 ```mermaid
-graph TD
-    %% BirthRecord
-    subgraph BirthRecord ["BirthRecord"]
-        B_Fields["| BirthStateFileNumber (PK) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |\n| MotherFirstName |\n| MotherLastName |\n| MaidenName |\n| MotherDOB |\n| MotherSSN |\n| ChildDOB |\n| Race |"]
-    end
+erDiagram
+    BirthRecord {
+        string BirthStateFileNumber_PK
+        string MotherFirstName
+        string MotherLastName
+        string MaidenName
+        string MotherDOB
+        string MotherSSN
+        string ChildDOB
+        string Race
+    }
 
-    %% DeathRecord
-    subgraph DeathRecord ["DeathRecord"]
-        D_Fields["| DeathStateFileNumber (PK) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |\n| DecedentFirstName |\n| DecedentLastName |\n| DecedentDOB |\n| DeathDate |\n| SSN |\n| PregnancyStatus |\n| ICD10 |\n| CauseOfDeath |\n| County |"]
-    end
+    DeathRecord {
+        string DeathStateFileNumber_PK
+        string DecedentFirstName
+        string DecedentLastName
+        string DecedentDOB
+        string DeathDate
+        string SSN
+        string PregnancyStatus
+        string ICD10
+        string CauseOfDeath
+        string County
+    }
 
-    %% FetalDeath
-    subgraph FetalDeathRecord ["FetalDeathRecord"]
-        F_Fields["| FetalStateFileNumber (PK) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |\n| MotherFirstName |\n| MotherLastName |\n| MaidenName |\n| MotherDOB |\n| MotherSSN |"]
-    end
+    FetalDeathRecord {
+        string FetalStateFileNumber_PK
+        string MotherFirstName
+        string MotherLastName
+        string MaidenName
+        string MotherDOB
+        string MotherSSN
+    }
 
-    %% Relationships
-    BirthRecord --> |"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Match by SSN / Name / DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"| DeathRecord
-    DeathRecord --> |"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Match by SSN / Name / DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"| FetalDeathRecord
-
-    %% Styling
-    style B_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
-    style D_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
-    style F_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
+    %% 관계 설정 및 중앙에 텍스트 표시
+    BirthRecord ||--|| DeathRecord : "Match by SSN / Name / DOB"
+    DeathRecord ||--|| FetalDeathRecord : "Match by SSN / Name / DOB"
