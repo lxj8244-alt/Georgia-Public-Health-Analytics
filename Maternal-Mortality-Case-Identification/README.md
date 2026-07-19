@@ -217,3 +217,18 @@ The complete sample dataset is available below.
 ➡️ **[MaternalMortalityOutput2025.csv](MaternalMortalityOutput2025.csv)**
 
 > **Note:** All records shown are synthetic and are intended solely for demonstrating SQL-based record linkage and maternal mortality case identification techniques.
+
+---
+
+## 11. Tableau Dashboard
+
+The SQL output generated in this project serves as the data source for an interactive Tableau dashboard.
+
+The dashboard will include:
+
+- Maternal mortality case summary
+- Geographic distribution by county
+- ICD-10 code distribution
+- Race distribution
+- Record matching summary
+
