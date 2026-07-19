@@ -181,6 +181,8 @@ The SQL script demonstrates:
 - Searching pregnancy-related cause-of-death keywords
 - Returning consolidated potential maternal mortality cases
 
-### SQL File
+### SQL Source Code
 
-📄 **MaternalMortalityCaseIdentification.sql**
+➡️ **[MaternalMortalityCaseIdentification.sql](MaternalMortalityCaseIdentification.sql)**
+
+The SQL script is fully documented with step-by-step comments to demonstrate the complete matching workflow and data quality process.
