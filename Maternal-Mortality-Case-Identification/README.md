@@ -77,40 +77,27 @@ The project is intended solely to demonstrate SQL development, record linkage te
 
 ## 7. Database ERD
 ```mermaid
-erDiagram
-    BirthRecord {
-        string BirthStateFileNumber_PK
-        string MotherFirstName
-        string MotherLastName
-        string MaidenName
-        string MotherDOB
-        string MotherSSN
-        string ChildDOB
-        string Race
-    }
+flowchart TD
+    %% BirthRecord
+    subgraph BirthRecord ["BirthRecord"]
+        B_Fields["BirthStateFileNumber (PK)<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>MotherSSN<br>ChildDOB<br>Race"]
+    end
 
-    DeathRecord {
-        string DeathStateFileNumber_PK
-        string DecedentFirstName
-        string DecedentLastName
-        string DecedentDOB
-        string DeathDate
-        string SSN
-        string PregnancyStatus
-        string ICD10
-        string CauseOfDeath
-        string County
-    }
+    %% DeathRecord
+    subgraph DeathRecord ["DeathRecord"]
+        D_Fields["DeathStateFileNumber (PK)<br>DecedentFirstName<br>DecedentLastName<br>DecedentDOB<br>DeathDate<br>SSN<br>PregnancyStatus<br>ICD10<br>CauseOfDeath<br>County"]
+    end
 
-    FetalDeathRecord {
-        string FetalStateFileNumber_PK
-        string MotherFirstName
-        string MotherLastName
-        string MaidenName
-        string MotherDOB
-        string MotherSSN
-    }
+    %% FetalDeath
+    subgraph FetalDeathRecord ["FetalDeathRecord"]
+        F_Fields["FetalStateFileNumber (PK)<br>MotherFirstName<br>MotherLastName<br>MaidenName<br>MotherDOB<br>MotherSSN"]
+    end
 
-    %% 관계 설정 및 중앙에 텍스트 표시
-    BirthRecord ||--|| DeathRecord : "Match by SSN / Name / DOB"
-    DeathRecord ||--|| FetalDeathRecord : "Match by SSN / Name / DOB"
+    %% Relationships
+    BirthRecord --> |"Match by SSN / Name / DOB"| DeathRecord
+    DeathRecord --> |"Match by SSN / Name / DOB"| FetalDeathRecord
+
+    %% Styling
+    style B_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
+    style D_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
+    style F_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
