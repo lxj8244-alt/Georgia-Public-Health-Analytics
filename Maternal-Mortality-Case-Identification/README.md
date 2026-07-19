@@ -10,7 +10,7 @@ The objective is to demonstrate how SQL can support public health surveillance, 
 
 ---
 
-### Matching Criteria
+## 2. Matching Criteria
 
 Potential maternal mortality cases are identified using multiple complementary matching strategies.
 
@@ -34,7 +34,7 @@ Matched records from each strategy are consolidated into a temporary table and r
 
 ---
 
-### Objectives
+## 3. Objectives
 
 * Design a relational SQL Server database for maternal mortality analysis.
 * Demonstrate advanced SQL querying and multi-step record matching.
@@ -43,7 +43,7 @@ Matched records from each strategy are consolidated into a temporary table and r
 
 ---
 
-## Technologies Used
+## 4. Technologies Used
 
 * Microsoft SQL Server
 * Transact-SQL (T-SQL)
@@ -55,7 +55,7 @@ Matched records from each strategy are consolidated into a temporary table and r
 
 ---
 
-## Project Highlights
+## 5. Project Highlights
 
 * Multi-source record matching
 * Multiple matching strategies to improve case identification
@@ -67,11 +67,13 @@ Matched records from each strategy are consolidated into a temporary table and r
 
 ---
 
-## Disclaimer
+## 6. Disclaimer
 
 This project uses **synthetic data** created exclusively for portfolio and educational purposes.
 
 Although the workflow is inspired by public health data quality processes used in vital records management, **no production data, confidential information, or personally identifiable information (PII) is included**.
 
 The project is intended solely to demonstrate SQL development, record linkage techniques, and data quality methodologies.
+
+## 7. Database ERD
 
