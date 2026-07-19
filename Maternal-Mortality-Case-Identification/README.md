@@ -124,6 +124,8 @@ flowchart TD
     style FetalDeathRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
 ```
 
+---
+
 ## 8. SQL Matching Workflow
 ```mermaid
 flowchart TD
@@ -167,6 +169,8 @@ flowchart TD
     style Final fill:#1e293b,stroke:#0f172a,stroke-width:1.5px,color:#fff
 ```
 
+---
+
 ## 9. SQL Script
 
 This project includes a complete SQL Server implementation for maternal mortality case identification.
@@ -188,6 +192,8 @@ The SQL script demonstrates:
 ➡️ **[MaternalMortalityCaseIdentification.sql](MaternalMortalityCaseIdentification.sql)**
 
 The SQL script is fully documented with step-by-step comments to demonstrate the complete matching workflow and data quality process.
+
+---
 
 ## 10. Sample SQL Output
 
