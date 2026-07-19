@@ -189,9 +189,9 @@ The SQL script is fully documented with step-by-step comments to demonstrate the
 
 ## 10. Sample SQL Output
 
-The SQL script demonstrates the maternal mortality case identification workflow using a synthetic **2025** dataset.
+The SQL script supports maternal mortality case identification for the **2021–2025** reporting period.
 
-The sample output below illustrates how death records are matched to birth records through the multi-step matching process.
+For demonstration purposes, the sample output below shows records generated for the **2025 reporting year**.
 
 | Death SFN | Date of Death | First Name | Last Name | Birth Match | ICD-10 | Race | County |
 |-----------|---------------|------------|-----------|-------------|--------|------|--------|
@@ -205,8 +205,8 @@ The sample output below illustrates how death records are matched to birth recor
 
 ### Complete Sample Dataset
 
-The complete sample dataset is available below.
+The complete sample dataset for the 2025 reporting year is available below.
 
 ➡️ **[MaternalMortalityOutput2025.csv](../MaternalMortalityOutput2025.csv)**
 
-> **Note:** All records shown are synthetic and are intended solely for demonstrating SQL-based record linkage and maternal mortality case identification techniques.
+> **Note:** This project uses synthetic data created for portfolio demonstration purposes. The SQL workflow supports analysis for the entire **2021–2025** reporting period, while the sample output shown here is limited to **2025** for readability.
