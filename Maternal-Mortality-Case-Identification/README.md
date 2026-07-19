@@ -77,57 +77,27 @@ The project is intended solely to demonstrate SQL development, record linkage te
 
 ## 7. Database ERD
 ```mermaid
-erDiagram
-    BirthRecord {
-        varchar StateFileNumber PK
-        varchar MotherSSN
-        varchar MotherFirstName
-        varchar MotherLastName
-        varchar MotherMaidenLastName
-        date MotherDOB
-        date ChildsDateOfBirth
-        int nDoBYear
-        boolean bSearchable
-        boolean bVoid
-    }
+graph TD
+    %% BirthRecord
+    subgraph BirthRecord ["BirthRecord"]
+        B_Fields["| BirthStateFileNumber (PK) |\n| MotherFirstName |\n| MotherLastName |\n| MaidenName |\n| MotherDOB |\n| MotherSSN |\n| ChildDOB |\n| Race |"]
+    end
 
-    DeathRecord {
-        varchar StateFileNumber PK
-        varchar SSN
-        varchar DecedentFirstName
-        varchar DecedentLastName
-        varchar DecedentMaidenLastName
-        date DOB
-        date dDateOfDeath
-        char cPregnant
-        varchar ICDCode1
-        varchar ICDCode2
-        varchar CauseOfDeathA
-        varchar CauseOfDeathB
-        varchar SignificantConditions
-        varchar County
-    }
+    %% DeathRecord
+    subgraph DeathRecord ["DeathRecord"]
+        D_Fields["| DeathStateFileNumber (PK) |\n| DecedentFirstName |\n| DecedentLastName |\n| DecedentDOB |\n| DeathDate |\n| SSN |\n| PregnancyStatus |\n| ICD10 |\n| CauseOfDeath |\n| County |"]
+    end
 
-    FetalDeathRecord {
-        varchar StateFileNumber PK
-        varchar MotherSSN
-        varchar MotherFirstName
-        varchar MotherLastName
-        varchar MotherMaidenLastName
-        date MotherDOB
-        date dChildsDateOfBirth
-        int nDoBYear
-        boolean bSearchable
-        boolean bVoid
-    }
+    %% FetalDeath
+    subgraph FetalDeathRecord ["FetalDeathRecord"]
+        F_Fields["| FetalStateFileNumber (PK) |\n| MotherFirstName |\n| MotherLastName |\n| MaidenName |\n| MotherDOB |\n| MotherSSN |"]
+    end
 
-    MM_Matches {
-        varchar BirthStateFileNumber FK
-        varchar DeathStateFileNumber FK
-        varchar RecordType
-    }
+    %% Relationships
+    BirthRecord --> |"Match by SSN / Name / DOB"| DeathRecord
+    DeathRecord --> |"Match by SSN / Name / DOB"| FetalDeathRecord
 
-    %% 관계 설정 (Relationships)
-    BirthRecord ||--o| DeathRecord : "MotherSSN = SSN (Maternal Death Match)"
-    BirthRecord ||--o{ MM_Matches : "BirthStateFileNumber"
-    DeathRecord ||--o{ MM_Matches : "DeathStateFileNumber"
+    %% Styling
+    style B_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
+    style D_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
+    style F_Fields fill:#fff,stroke:#333,stroke-width:1px,text-align:left
