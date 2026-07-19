@@ -102,7 +102,7 @@ flowchart TD
     end
 
     %% 하단 설명문 (테두리와 배경 없는 투명 텍스트로 처리)
-    Note["Logical Relationship (No Physical Foreign Keys)"]
+    Note["Logical Relationship<br>(No Physical Foreign Keys)"]
     
     %% 가상의 선을 연결하되 선은 안 보이게 처리하여 하단 중앙에 배치
     BirthRecord ~~~ Note
