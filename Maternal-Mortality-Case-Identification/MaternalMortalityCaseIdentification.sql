@@ -190,18 +190,6 @@ SELECT
 		WHEN 'B' THEN b.MotherSSN
 		WHEN 'F' THEN f.MotherSSN
 		else '' end,'') 'cMothersSSN'
-	--, CASE mm.RecordType 
-	--	WHEN 'B' THEN b.MotherFirstName
-	--	WHEN 'F' THEN f.MotherFirstName
-	--	else '' end 'BirthMotherFirstName'
-	--, CASE mm.RecordType 
-	--	WHEN 'B' THEN b.MotherLastName
-	--	WHEN 'F' THEN f.MotherLastName
-	--	else '' end 'BirthMotherLastName'
-	--, CASE mm.RecordType 
-	--	WHEN 'B' THEN b.MotherDOB
-	--	WHEN 'F' THEN f.MotherDOB
-	--	else '' end 'BirthMotherDateOfBirth'
 	, CASE mm.RecordType 
 		WHEN 'B' THEN b.ChildsDateOfBirth
 		WHEN 'F' THEN f.dChildsDateOfBirth
