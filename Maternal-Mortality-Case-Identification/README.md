@@ -121,3 +121,5 @@ flowchart TD
     style BirthRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
     style FetalDeathRecord fill:none,stroke:#94a3b8,stroke-dasharray: 5 5
 
+## 8. SQL Matching Workflow
+
