@@ -201,15 +201,14 @@ The SQL script demonstrates the maternal mortality case identification workflow 
 
 The sample output below illustrates how death records are matched to birth records through the multi-step matching process.
 
-| Death SFN | Date of Death | First Name | Last Name | Birth Match | ICD-10 | Race | County |
-|-----------|---------------|------------|-----------|-------------|--------|------|--------|
-| 2025GA000617 | 01/04/2025 | David | Thomas | No Match | C34 | Black | Bartow |
-| 2025GA000692 | 01/04/2025 | Emily | Taylor | Birth (SSN) | — | White | Hall |
-| 2025GA000734 | 01/04/2025 | Patricia | Johnson | Birth (SSN) | — | Asian | Clayton |
-| 2025GA000742 | 01/05/2025 | Mary | Williams | Birth (SSN) | — | Black | Effingham |
-| 2025GA000696 | 01/10/2025 | Amanda | Davis | Birth (SSN) | — | Black | Henry |
-| 2025GA000659 | 01/14/2025 | Elizabeth | Smith | Birth (SSN) | — | Other | Carroll |
-| 2025GA000652 | 01/15/2025 | Linda | Jones | Birth (SSN) | — | Black | Forsyth |
+| Death SFN | Date of Death | First Name | Last Name | Birth Match Type | ICD-10 | Cause of Death | Race | County |
+|-----------|---------------|------------|-----------|------------------|--------|----------------|------|--------|
+| 2025GA000617 | 01/04/2025 | David | Thomas | — | C34 | Cancer | Black | Bartow |
+| 2025GA000579 | 01/22/2025 | Joseph | Wilson | — | J44 | ectopic | Other | Coweta |
+| 2025GA000575 | 01/24/2025 | William | Garcia | — | J44 | eclampsia | Asian | Effingham |
+| 2025GA000588 | 01/30/2025 | Robert | Anderson | — | O96 | Cancer | White | Gordon |
+| 2025GA000581 | 02/06/2025 | John | Jones | — | I21 | abruptio | Asian | Fulton |
+| 2025GA000580 | 04/01/2025 | Joseph | Garcia | — | I50 | uterine rupture | White | Fulton |
 
 ### Complete Sample Dataset
 
