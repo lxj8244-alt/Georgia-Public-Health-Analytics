@@ -226,6 +226,8 @@ The SQL output generated in this project serves as the data source for an intera
 
 The dashboard will include:
 
+## Dashboard Preview
+
 ![Georgia Maternal Mortality Dashboard](Georgia_Maternal_Mortality_Dashboard.png)
 
 - Maternal Mortality Rate (per 100,000 live births)
