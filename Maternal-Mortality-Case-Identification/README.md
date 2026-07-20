@@ -260,8 +260,3 @@ Future enhancements may include:
 - Advanced data visualizations with ggplot2.
 - Expanded public health trend analysis using Georgia OASIS data.
 
-### Example R Analysis
-
-**R Source Code:** [Birth_Trend_Analysis.R](Birth_Trend_Analysis.R)
-
-![R Visualization](R_Birth_Trend.png)
