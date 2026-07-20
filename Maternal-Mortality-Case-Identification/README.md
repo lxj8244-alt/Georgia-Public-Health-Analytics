@@ -249,3 +249,19 @@ The dashboard will include:
   **(Maternal Deaths ÷ Live Births) × 100,000**
 
 > **Note:** This dashboard uses synthetic maternal mortality data for portfolio purposes and does not represent official Georgia public health statistics.
+
+---
+
+## 12. Future Enhancements
+
+Future enhancements may include:
+
+- Additional statistical analyses using R.
+- Advanced data visualizations with ggplot2.
+- Expanded public health trend analysis using Georgia OASIS data.
+
+### Example R Analysis
+
+**R Source Code:** [Birth_Trend_Analysis.R](Birth_Trend_Analysis.R)
+
+![R Visualization](R_Birth_Trend.png)
