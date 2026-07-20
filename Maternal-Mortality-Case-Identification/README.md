@@ -226,9 +226,18 @@ The SQL output generated in this project serves as the data source for an intera
 
 The dashboard will include:
 
-- Maternal mortality case summary
-- Geographic distribution by county
-- ICD-10 code distribution
-- Race distribution
-- Record matching summary
+- Maternal Mortality Rate (per 100,000 live births)
+- Maternal Deaths by Race
+- County-level geographic analysis
+- Top counties by race
+- Interactive filters
 
+## Methodology
+
+- Maternal death records were generated using synthetic data.
+- Live birth totals (2021–2025) were obtained from the Georgia OASIS database.
+- Maternal Mortality Rate was calculated as:
+
+  **(Maternal Deaths ÷ Live Births) × 100,000**
+
+> **Note:** This dashboard uses synthetic maternal mortality data for portfolio purposes and does not represent official Georgia public health statistics.
