@@ -236,6 +236,10 @@ The dashboard will include:
 - Top counties by race
 - Interactive filters
 
+### Interactive Dashboard
+
+[View on Tableau Public](https://public.tableau.com/views/YourDashboardName)
+
 ## Methodology
 
 - Maternal death records were generated using synthetic data.
