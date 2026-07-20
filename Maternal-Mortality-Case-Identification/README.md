@@ -238,7 +238,7 @@ The dashboard will include:
 
 ### Interactive Dashboard
 
-[View on Tableau Public]([https://public.tableau.com/views/YourDashboardName](https://public.tableau.com/app/profile/juhak.lee/viz/ProjectAtlas_17845681465330/Dashboard))
+[View on Tableau Public](https://public.tableau.com/app/profile/juhak.lee/viz/ProjectAtlas_17845681465330/Dashboard)
 
 ## Methodology
 
